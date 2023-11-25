@@ -11,7 +11,7 @@ public with sharing class ucl_Client_c {
 
     }
     
-    public ucl_Client_C(String accountNumber, String clientNumber, String firstName, String lastName, String email, String phone, String address) {
+    public ucl_Client_c(String accountNumber, String clientNumber, String firstName, String lastName, String email, String phone, String address) {
         this.AccountNumber = accountNumber;
         this.ClientNumber = clientNumber;
         this.FirstName = firstName;
