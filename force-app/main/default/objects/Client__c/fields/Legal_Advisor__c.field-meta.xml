@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>ucl_LegalAdvisor__c</fullName>
+    <fullName>Legal_Advisor__c</fullName>
     <externalId>false</externalId>
-    <label>ucl_LegalAdvisor</label>
-    <referenceTo>ucl_LegalAdvisor__c</referenceTo>
-    <relationshipLabel>ucl_Clients</relationshipLabel>
-    <relationshipName>ucl_Clients</relationshipName>
+    <label>Legal Advisor</label>
+    <referenceTo>Legal_Advisor__c</referenceTo>
+    <relationshipLabel>Clients</relationshipLabel>
+    <relationshipName>Clients</relationshipName>
     <relationshipOrder>0</relationshipOrder>
-    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
     <trackTrending>false</trackTrending>
     <type>MasterDetail</type>
     <writeRequiresMasterRead>false</writeRequiresMasterRead>

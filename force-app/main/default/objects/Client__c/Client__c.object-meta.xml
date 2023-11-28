@@ -149,16 +149,16 @@
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
-    <enableSearch>true</enableSearch>
+    <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>ucl_Client</label>
+    <label>Client</label>
     <nameField>
-        <label>First Name</label>
+        <label>Client Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>ucl_Clients</pluralLabel>
+    <pluralLabel>Clients</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
