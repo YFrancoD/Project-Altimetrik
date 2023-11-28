@@ -149,16 +149,16 @@
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
-    <enableSearch>true</enableSearch>
+    <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>ucl_LegalAdvisor</label>
+    <label>Legal Advisor</label>
     <nameField>
-        <label>Account Name</label>
+        <label>ID Account</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>ucl_LegalAdvisors</pluralLabel>
+    <pluralLabel>Legal Advisor</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
