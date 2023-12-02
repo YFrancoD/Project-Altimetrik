@@ -33,6 +33,7 @@ public with sharing class InsertDataHeroku {
                     legalAdvisorRecord.Account_Status__c = accountStatus;
                     legalAdvisorRecord.As_of_date__c = asOfDate;
                     legalAdvisorsToUpsert.add(legalAdvisorRecord);
+                //sacar del for
                     upsert legalAdvisorsToUpsert Account_Number__c;
 
                     // Manejo de la lista de clientes
@@ -60,9 +61,6 @@ public with sharing class InsertDataHeroku {
                     }
                 }
             }
-
-            // Realiza el upsert de registros
-           
         
         } else {
             System.debug('Error: ' + response.getStatusCode() + ' - ' + response.getStatus());

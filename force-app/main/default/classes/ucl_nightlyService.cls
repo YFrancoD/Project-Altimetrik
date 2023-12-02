@@ -5,6 +5,10 @@ public class ucl_nightlyService implements Schedulable {
         } catch(Exception e) {
             System.debug('Error: ' + e.getMessage());
             
+                // programar la ejecución.
+            // String jobName = 'importLegalAdvisors';
+            //String cronExp = '0 0 1 1/1 * ? *'; // Cron expression for 2 AM every day
+            //System.schedule(jobName, cronExp, new ucl_LegalAdvisorsScheduledJob());
         }
     }
 }
