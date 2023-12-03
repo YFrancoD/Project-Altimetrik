@@ -1,5 +1,7 @@
 public with sharing class InsertDataHeroku {
-    public InsertDataHeroku() {
+
+    @AuraEnabled
+    public static void InsertData() {
         Http http = new Http();
         HttpRequest request = new HttpRequest();
         request.setEndpoint('https://altimetrik-bootcamp.herokuapp.com/LegalAccounts');
