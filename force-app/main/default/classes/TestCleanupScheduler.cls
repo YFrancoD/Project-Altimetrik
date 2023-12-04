@@ -20,7 +20,7 @@
  * See the Apex Language Reference for more information about Testing and Code Coverage.
  */
 @isTest
-private class TestNightlyService {
+private class TestCleanupScheduler {
 
     @isTest
     static void myUnitTest() {
