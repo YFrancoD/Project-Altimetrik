@@ -2,6 +2,7 @@ public with sharing class InsertDataHeroku {
 
     @AuraEnabled
     public static void InsertData() {
+        try{
         Http http = new Http();
         HttpRequest request = new HttpRequest();
         request.setEndpoint('https://altimetrik-bootcamp.herokuapp.com/LegalAccounts');
@@ -27,7 +28,9 @@ public with sharing class InsertDataHeroku {
                         asOfDate = Date.parse(asOfDateString);
                     } catch (Exception e) {
                         System.debug('Error al convertir la fecha: ' + e.getMessage());
+                        ucl_errorManager.saveErrorToCustomObject('Error al convertir la fecha', e.getMessage());
                         asOfDate = Date.today();
+                        ucl_errorManager.sendEmail(e.getMessage(), 'yfduarteg@gmail.com');
                     }
         
                     legalAdvisorRecord.Account_Number__c = accountNumber;
@@ -35,8 +38,11 @@ public with sharing class InsertDataHeroku {
                     legalAdvisorRecord.Account_Status__c = accountStatus;
                     legalAdvisorRecord.As_of_date__c = asOfDate;
                     legalAdvisorsToUpsert.add(legalAdvisorRecord);
-                //sacar del for
                     upsert legalAdvisorsToUpsert Account_Number__c;
+
+
+
+                
 
                     // Manejo de la lista de clientes
                     List<Object> clientList = (List<Object>) legalAdvisorMap.get('Clients');
@@ -59,14 +65,23 @@ public with sharing class InsertDataHeroku {
                             System.debug('El Id del Legal Advisor es nulo. No se puede asignar a Client__c.');
                         }
                         
-            upsert clientsToUpsert Client_Number__c;
                     }
                 }
             }
+            upsert clientsToUpsert Client_Number__c;
+
         
         } else {
             System.debug('Error: ' + response.getStatusCode() + ' - ' + response.getStatus());
             System.debug('Response Body: ' + response.getBody());
+            ucl_errorManager.saveErrorToCustomObject('Error en proceso de inserción', 'Error: ' + response.getStatusCode() + ' - ' + response.getStatus() + '\nResponse Body: ' + response.getBody());
         }
+    }catch (Exception ex) {
+        System.debug('Error in process: ' + ex.getMessage());
+        ucl_errorManager.saveErrorToCustomObject('Error in process', 'Exception: ' + ex.getMessage());
+        ucl_errorManager.sendEmail(ex.getMessage(), 'yfduarteg@gmail.com');
+
     }
+
+}
 }

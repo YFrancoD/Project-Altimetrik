@@ -23,6 +23,3 @@ export default class NightlyButton extends LightningElement {
         this.dispatchEvent(toastEvent);
     }
 }
-
-
-
