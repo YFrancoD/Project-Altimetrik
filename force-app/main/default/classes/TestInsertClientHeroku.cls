@@ -1,7 +1,6 @@
 @isTest
 private class TestInsertClientHeroku {
 
-    @isTest
     @isTest 
     public class MockHttpResponseGenerator implements HttpCalloutMock {
          public HTTPResponse respond(HTTPRequest req) {
@@ -21,7 +20,6 @@ private class TestInsertClientHeroku {
          // Inicia el bloque de prueba
          Test.startTest();
  
-         // Llama al método que deseas probar
          InsertDataHeroku.InsertData();
  
          // Termina el bloque de prueba
