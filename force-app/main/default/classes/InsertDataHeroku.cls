@@ -38,6 +38,8 @@ public with sharing class InsertDataHeroku {
                     legalAdvisorRecord.Account_Status__c = accountStatus;
                     legalAdvisorRecord.As_of_date__c = asOfDate;
                     legalAdvisorsToUpsert.add(legalAdvisorRecord);
+
+                    // si bien tener el upsert dentro del for enlentece el proceso si lo saco no me carga los clientes.
                     upsert legalAdvisorsToUpsert Account_Number__c;
 
 
@@ -68,6 +70,7 @@ public with sharing class InsertDataHeroku {
                     }
                 }
             }
+      // si bien tener el upsert dentro del for enlentece el proceso si lo saco no me carga los clientes.
             upsert clientsToUpsert Client_Number__c;
 
         
