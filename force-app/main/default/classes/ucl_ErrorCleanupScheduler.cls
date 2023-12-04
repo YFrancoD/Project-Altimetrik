@@ -4,7 +4,7 @@ public with sharing class ucl_ErrorCleanupScheduler implements Schedulable {
         ucl_errorManager errorManagerInstance = new ucl_errorManager();
 
         // Llama al método deleteExpiredErrors
-        errorManagerInstance.deleteExpiredErrors();
+        ucl_errorManager.deleteExpiredErrors();
     }
 }
 // asi lo llamaria
