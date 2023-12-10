@@ -1,5 +1,5 @@
 @isTest
-private class TestCleanupScheduler {
+private class ucl_TestCleanupScheduler {
     @isTest
     static void TestErrorCleanupScheduler() {
         // Crea una instancia de la clase ucl_ErrorCleanupScheduler
@@ -13,15 +13,14 @@ private class TestCleanupScheduler {
 
         // Verifica que el método execute del ErrorCleanupScheduler haya sido llamado correctamente
         System.assertEquals(1, sc.getExecuteCount(), 'El método execute debe llamarse una vez');
-    
     }
 
     // Implementación de prueba de SchedulableContext
     @isTest
-    private class MySchedulableContext implements SchedulableContext {
+    private class MySchedulableContext implements Schedulable, SchedulableContext {
         private Integer executeCount = 0;
 
-        public void execute() {
+        public void execute(SchedulableContext context) {
             executeCount++;
         }
 
@@ -29,6 +28,10 @@ private class TestCleanupScheduler {
             return executeCount;
         }
 
+        // Implementa el método necesario para la interfaz Schedulable
+        public Id System.schedule(String jobName, String cronExp, Object schedulable) {
+            // Devuelve null ya que no estamos interesados en programar trabajos reales durante las pruebas
+            return null;
+        }
     }
-
 }
