@@ -1,8 +1,8 @@
 @isTest
-private class TestNightlyService {
+private class ucl_TestNightlyService {
 
     @isTest
-        static void TestNightlyService() {
+        static void ucl_TestNightlyService() {
             // Inicia 
             Test.startTest();
     

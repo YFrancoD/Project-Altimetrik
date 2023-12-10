@@ -1,7 +1,7 @@
 public class ucl_nightlyService implements Schedulable {
     public void execute(SchedulableContext ctx) {
         try {
-             InsertDataHeroku.insertData();
+             ucl_InsertDataHeroku.insertData();
             
         } catch(Exception e) {
             System.debug('Error en el trabajo programado: ' + e.getMessage());

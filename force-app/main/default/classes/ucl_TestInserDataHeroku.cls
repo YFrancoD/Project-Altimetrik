@@ -1,5 +1,5 @@
 @isTest
-private class TestInserDataHeroku {
+private class ucl_TestInserDataHeroku {
 
     @isTest
     public class MockHttpResponseGenerator implements HttpCalloutMock {
@@ -22,7 +22,7 @@ private class TestInserDataHeroku {
 
             try {
                 // Llama al método que deseas probar
-                InsertDataHeroku.insertData();
+                ucl_InsertDataHeroku.insertData();
 
                 // Verifica que se hayan insertado 12 registros de Legal_Advisor__c
                 Integer advisorCount = [SELECT COUNT() FROM Legal_Advisor__c WHERE Account_Status__c = 'Enabled'];
